@@ -202,7 +202,7 @@ This repository benefits from several excellent open-source projects:
 * TCR
 
 Special thanks to the authors of:
-[[![Code](https://img.shields.io/badge/Code-GitHub-black)](Code)](https://github.com/XLearning-SCU/2025-ICLR-TCR)
+[https://github.com/XLearning-SCU/2025-ICLR-TCR](https://github.com/XLearning-SCU/2025-ICLR-TCR)
 
 
 for releasing their code and benchmarks, which greatly facilitate research on test-time adaptation for cross-modal retrieval.
