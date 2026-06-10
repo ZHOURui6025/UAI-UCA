@@ -173,7 +173,13 @@ python -m torch.distributed.run --nproc_per_node 1 --master_port 10003 main.py -
 ```
 
 ---
+### Text-to-Image Retrieval
 
+```bash
+python -m torch.distributed.run --nproc_per_node 1 --master_port 10003 main.py --retrieval t2i --config ./configs/QS_BLIP/t2i/flickr_image_c/Flickr30K_IP_gaussian_noise_5.yaml --method uca
+```
+
+---
 
 ## 📖 Citation
 
