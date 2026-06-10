@@ -7,7 +7,7 @@ from tqdm import tqdm
 import utils
 from data import create_dataset, create_sampler, create_loader
 from ddp import *
-from evaluation import evaluation, itm_eval, itm_eval_and_plot
+from evaluation import evaluation, itm_eval
 from models.tta_baselines.set_model import set_optimizer, set_model, set_temperature
 import models.blip_tta as BLIP, models.clip_tta as CLIP, models.clip_reid_tta as CLIP_Reid
 import swanlab
@@ -52,7 +52,7 @@ def test_time_tune(adapt_model, data_loader_text, data_loader_image, optimizer, 
     
     bs = config["batch_size_total"]
     
-    if args.method in ("tcr","ctta"):
+    if args.method in ("uca"):
         queue_list = []
         max_queue_size = int(args.queue_ratio*config["batch_size_total"])
         
@@ -184,12 +184,10 @@ def main(args, config):
     if args.retrieval is not None:
         score_i2t, score_t2i, idx_trans = test_time_tune(model, loader_text, loader_image, optimizer, device, config, args)
         test_result = itm_eval(score_i2t, score_t2i, args, loader_image, idx_trans)
-        #test_result = itm_eval_and_plot(score_i2t, score_t2i, args, loader_image, config, idx_trans)
     else:
         print('no test time tune')
         score_i2t, score_t2i = evaluation(model, loader_text, loader_image, device, args, config=config)
         test_result = itm_eval(score_i2t, score_t2i, args, loader_image)
-        #test_result = itm_eval_and_plot(score_i2t, score_t2i, args, loader_image, config)
         
     if args.retrieval == "i2t":
         print("Test Result:", {k: test_result[k] for k in ['txt_r1', 'txt_r5', 'txt_r10', 'txt_r_mean', 'txt_map']})
