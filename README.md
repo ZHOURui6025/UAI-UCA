@@ -9,7 +9,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 
-*Rui Zhou · Yawen Hao · Hao Zuo · Xinhang Wan · Cheng Zhu$*$· Yun Zhou$*$*
+Rui Zhou · Yawen Hao · Hao Zuo · Xinhang Wan · \*Cheng Zhu\* · \*Yun Zhou\*
 
 National University of Defense Technology
 
