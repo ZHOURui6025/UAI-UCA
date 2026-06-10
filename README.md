@@ -189,12 +189,7 @@ python main.py \
 ## 📖 Citation
 
 ```bibtex
-@inproceedings{zhou2026uca,
-  title={Unified Confidence Adjustment for Robust Cross-Modal Retrieval Under Test-Time Distribution Shifts},
-  author={Zhou, Rui and Hao, Yawen and Zuo, Hao and Wan, Xinhang and Zhu, Cheng and Zhou, Yun},
-  booktitle={Conference on Uncertainty in Artificial Intelligence},
-  year={2026}
-}
+waiting for publication~
 ```
 
 ---
