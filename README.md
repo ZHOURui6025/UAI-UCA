@@ -169,16 +169,7 @@ weights/
 ### Image-to-Text Retrieval
 
 ```bash
-python -m torch.distributed.run --nproc_per_node 1 --master_port 10003 main.py --retrieval i2t --config ./configs/QS/i2t/flickr_image_c/Flickr30K_IP_gaussian_noise_5.yaml --method uca
-
-```
-
-### Text-to-Image Retrieval
-
-```bash
-python -m torch.distributed.run --nproc_per_node 1 --master_port 10003 main.py --retrieval t2i --config ./configs/QS/t2i/flickr_text_c/annotation_OcrAug_7.yaml --method uca
-
-```
+python -m torch.distributed.run --nproc_per_node 1 --master_port 10003 main.py --retrieval i2t --config ./configs/QS_BLIP/i2t/flickr_image_c/Flickr30K_IP_gaussian_noise_5.yaml --method uca
 
 ---
 
