@@ -34,9 +34,9 @@ def set_model(model, optimizer, args, margin_e0=0):
     elif args.method=='tcr':
         model=TCR(model, optimizer, steps=args.tta_steps)
     elif args.method=='uca':
-        model=CTTA(model, optimizer, steps=args.tta_steps)
+        model=UCA(model, optimizer, steps=args.tta_steps)
     elif args.method=='uca_untrain':
-        model=CTTA_untrain(model, optimizer, steps=args.tta_steps)
+        model=UCA_untrain(model, optimizer, steps=args.tta_steps)
     # elif args.method=='tcr_untrain':
     #     model=TCR_Untrain(model, optimizer, steps=1)
     else:
