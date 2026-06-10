@@ -42,7 +42,7 @@ In cross-modal retrieval, blindly increasing confidence may:
 ❌ Cause unstable adaptation
 
 <p align="center">
-  <img src="motivation3.png" width="950">
+  <img src="./motivation3.png" width="950">
 </p>
 ---
 
