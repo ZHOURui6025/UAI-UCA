@@ -170,6 +170,7 @@ weights/
 
 ```bash
 python -m torch.distributed.run --nproc_per_node 1 --master_port 10003 main.py --retrieval i2t --config ./configs/QS_BLIP/i2t/flickr_image_c/Flickr30K_IP_gaussian_noise_5.yaml --method uca
+```
 
 ---
 
