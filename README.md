@@ -41,13 +41,13 @@ In cross-modal retrieval, blindly increasing confidence may:
 
 ❌ Cause unstable adaptation
 
+<p align="center">
+  <img src="docs/motivation.png" width="950">
+</p>
 ---
 
 ## 🧠 Key Idea
 
-<p align="center">
-  <img src="docs/framework.png" width="950">
-</p>
 
 Instead of maximizing confidence directly, UCA:
 
