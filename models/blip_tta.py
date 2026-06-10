@@ -204,39 +204,6 @@ class BLIP_Retrieval(nn.Module):
             #     0)  # [entropys<=entropy_threshold]
 
         return loss_REM, loss_UNI, loss_EMG, loss_CON, queue_list, sim_matrix,target_modality_gap,confidence_gap, distances
-        def forward_tta_untrain(self, modality_query, device, queue_list, max_queue_size, update_signal, step, args, scale):
-        if args.retrieval=='i2t':
-            modality_gallery_feat_all=self.text_features
-            modality_query_feat=self.encode_image(modality_query)
-            modality_query_feat=all_gather_with_grad(modality_query_feat)
-        else:
-            modality_gallery_feat_all=self.image_features
-            modality_query_feat=self.encode_text(modality_query, device)
-            modality_query_feat=all_gather_with_grad(modality_query_feat)
-
-        sim_matrix = modality_query_feat @ modality_gallery_feat_all.t()
-        nearest_neighbors_indices = (sim_matrix).argmax(dim=1)
-        modality_gallery_feat = modality_gallery_feat_all[nearest_neighbors_indices]
-
-        if (step==0 and update_signal):
-            queue_list=update_queue(modality_query_feat, modality_gallery_feat, queue_list, args.con_ratio, max_queue_size, args)
-
-        margin, entropy_queue=get_current_value(queue_list)
-
-        target_modality_gap=compute_modality_gap(modality_query_feat, modality_gallery_feat)
-
-        # #uniformity
-        center_query=torch.mean(modality_query_feat, dim=0)
-        modality_query_feat=scale*(modality_query_feat-center_query)+center_query
-
-        #modality gap
-        shift=torch.mean(modality_gallery_feat, dim=0)-center_query
-        rate=margin/target_modality_gap
-        modality_query_feat=modality_query_feat+(1-rate)*shift
-        modality_query_feat=F.normalize(modality_query_feat)
-        sim_matrix=modality_query_feat @ modality_gallery_feat_all.t()
-
-        return queue_list, sim_matrix
 
 def blip_retrieval(pretrained='',**kwargs):
     model = BLIP_Retrieval(**kwargs)
