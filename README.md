@@ -60,8 +60,8 @@ Instead of maximizing confidence directly, UCA:
 
 ## 📢 News
 
-* **[2026.06.09]** UCA accepted by UAI 2026 🎉
-* **[2026.06.02]** Code released.
+* **[2026.06.09]** Code released.
+* **[2026.06.02]** UCA accepted by UAI 2026 🎉
 
 ---
 
