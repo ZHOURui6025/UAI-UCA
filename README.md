@@ -21,6 +21,13 @@ National University of Defense Technology
 
 ---
 
+## 📢 News
+
+* **[2026.06.09]** Code released.
+* **[2026.06.02]** UCA accepted by UAI 2026 🎉
+
+---
+
 ## 🔥 Highlights
 
 ### Why UCA?
@@ -58,12 +65,7 @@ Instead of maximizing confidence directly, UCA:
 
 ---
 
-## 📢 News
 
-* **[2026.06.09]** Code released.
-* **[2026.06.02]** UCA accepted by UAI 2026 🎉
-
----
 
 ## 📊 Benchmarks
 
